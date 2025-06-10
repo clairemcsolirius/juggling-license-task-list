@@ -28,7 +28,13 @@ router.post('/has-account',(req, res) => {
   })
 
   router.post('/code',(req, res) => {
-    res.redirect('/application/show')
-})
+    req.session.data.user = {}
+    res.redirect('/application')
+  })
+
+  router.get('/account/sign-out',(req, res) => {
+    delete req.session.data.user
+    res.redirect('/has-account')
+  })
 
 require('./routes/application/show')(router)

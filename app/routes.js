@@ -39,3 +39,4 @@ router.post('/has-account',(req, res) => {
 
 require('./routes/application/show')(router)
 require('./routes/application/edit-personal-details')(router)
+require('./routes/application/edit-experience')(router)

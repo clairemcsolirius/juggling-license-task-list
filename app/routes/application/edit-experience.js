@@ -12,6 +12,10 @@ router.post('/application/edit-experience/start-date', (req, res) => {
     res.redirect('check')
 })
 
+router.post('/application/edit-experience/check', (req, res) => {
+    res.redirect('/application')
+})
+
 
 
 }

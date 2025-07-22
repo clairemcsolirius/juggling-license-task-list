@@ -11,9 +11,9 @@ const addFilter = govukPrototypeKit.views.addFilter
 addFilter('statusColour', status =>{
     switch(status) {
         case 'Completed':
-            return 'govuk-tag--green'
-        case 'Incomplete':
             return 'govuk-tag--blue'
+        case 'Incomplete':
+            return 'govuk-tag--light-blue'
         default:
             return 'govuk-tag--grey'
     }

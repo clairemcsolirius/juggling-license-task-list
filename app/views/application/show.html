@@ -47,8 +47,8 @@
             href: "/application/edit-experience/juggling-balls",
             status: {
               tag: {
-                text: "Not yet started",
-                classes: "govuk-tag--blue"
+                classes: data.experience.status | statusColour,
+                text: data.experience.status or "Not yet started"
               }
             }
           }
@@ -64,11 +64,11 @@
             title: {
               text: "Evidence"
             },
-            href: "/",
+            href: "/application/edit-evidence/has-evidence",
             status: {
               tag: {
-                text: "Not yet started",
-                classes: "govuk-tag--blue"
+                classes: data.evidences.status | statusColour,
+                text: data.evidence.status or "Not yet started"
               }
             }
           }

@@ -1,6 +1,6 @@
 {% extends "layouts/main.html" %}
 
-{% set pageName="Upload evidence if you have it" %}
+{% set pageName="Upload evidence" %}
 
 {% block beforeContent %}
 {{ govukBackLink({
@@ -23,27 +23,16 @@ href: "javascript:window.history.back()"
 
       <form novalidate method="post">
 
-        {{ govukRadios({
-          idPrefix: "evidence[hasEvidence]",
-          name: "evidence[hasEvidence]",
-          fieldset: {
-            legend: {
-              text: "Do you have evidence to upload?",
-              isPageHeading: true,
-              classes: "govuk-fieldset__legend--m"
-            }
+        {{ govukFileUpload({
+          id: "evidence[file]",
+          name: "evidence[file]",
+          label: {
+            text: "Upload files",
+            classes: "govuk-label--m"
           },
-          value: data.evidence.hasEvidence,
-          items: [
-            {
-              value: "Yese",
-              text: "Yes"
-            },
-            {
-              value: "No",
-              text: "No"
-            }
-          ]
+          hint: {
+            text: "Must be smaller than 100MB"
+          }
         }) }}
 
         {{ govukButton({
